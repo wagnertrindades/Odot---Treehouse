@@ -1,0 +1,49 @@
+ Detalhes Curso Ruby on Rails Treehouse
+
+
+
+Primeiro passo configurar ambiente
+
+- Instalar rbenv : https://github.com/sstephenson/rbenv#installation
+- Instalar ruby-build : https://github.com/sstephenson/ruby-build#readme
+- $ rbenv install [ultima versao do ruby]
+- $ rbenv global [ultima versao do ruby]
+- Após isso a versão do ruby -v tem que ser a mesma da ultima versao
+- $ rbenv rehash
+- $ gem install bundle
+- $ gem	install rails
+- $ rbenv rehash
+- Instalar VirtualBox: https://www.virtualbox.org/
+- Instalar Vagrant: https://www.vagrantup.com/
+- É necessário o diretório com as configurações da VM, no curso teve um link para baixar
+- Dentro do diretório da VM, execute:
+- $ vagrant up
+- Para entrar na maquina virtual
+- $ vagrant ssh
+
+
+
+Segundo Passo - Startando um projeto com testes através do rspec e capybara
+
+- bin/rails new [nome_projeto]
+- Configurar git
+- Instalar rspec e capybara, que são gems de testes
+- Modificar primeiro no Gemfile
+- $ bundle
+- $ /bin/rails generate rspec:install
+- Modificar o arquivo dentro da pasta spec, colocando o capybara:
+- require 'capybara/spec'
+- Coloca um rspec especifico para a aplicação adicionando bin/autospec e bin/rspec:
+- $ bundle binstubs rspec-core
+- Remover a pasta test dentro do projeto
+
+
+
+Terceiro Passo - Gerando Scaffold com uma outra database igual para test
+
+- Gera scaffold:
+- $ bin/rails generate scaffold [nome_class] [atributo]:[tipo] [atributo]:[tipo]
+- Gera o banco de dados que já foi configurado pelo scaffold:
+- $ bin/rake db:migrate
+- Gera um outro banco de dados igual para utilizar nos testes
+- $ bin/rake db:migrate RAILS_ENV=test
