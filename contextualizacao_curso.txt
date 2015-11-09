@@ -47,3 +47,29 @@ Terceiro Passo - Gerando Scaffold com uma outra database igual para test
 - $ bin/rake db:migrate
 - Gera um outro banco de dados igual para utilizar nos testes
 - $ bin/rake db:migrate RAILS_ENV=test
+
+
+
+**************
+** Database **
+**************
+
+- has_many
+	
+	one-to-many: Um para muitos
+	Por exemplo:
+	Um cliente tem vários pedidos, neste caso se coloca o has_many no cliente. 
+	E cada pedido tem o id do cliente
+
+	Definicao Caelum:
+	Associação que provê uma maneira de mapear uma relação one-to-many entre duas entidades.
+
+- belongs_to
+	
+	one-to-to: Um para um
+	Por exemplo:
+	O pedido tem um cliente especifico, neste caso se coloca o belongs_to no pedido.
+	E o pedido tem o id do cliente
+
+	Definicao Caelum:
+	Usado quando um modelo tem como um de seus atributos o id de outro modelo (many-to-one ou one-to-one).
