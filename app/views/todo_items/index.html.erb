@@ -1,4 +1,4 @@
-<h1><%= @todo_list.title %></h1>
+<h1 class="title"><%= @todo_list.title %></h1>
 
 <table class="todo_items">
 	<thead>
@@ -8,7 +8,7 @@
             <th width="10%">Functions</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="todo-items">
 		<% @todo_list.todo_items.each do |todo_item| %>
 			<tr id="<%= dom_id(todo_item) %>">
 				<td>
@@ -18,7 +18,7 @@
 						<%= link_to "Mark Complete", complete_todo_list_todo_item_path(todo_item), method: :patch %>
 					<% end %>
 				</td>
-				<td><%= todo_item.content %></td>
+				<td class="item-content"><%= todo_item.content %></td>
 				<td>
 					<%= link_to "Edit", edit_todo_list_todo_item_path(todo_item) %>
 					<%= link_to "Delete", todo_list_todo_item_path(todo_item), method: :delete, data: { confirm: "Are you sure?" } %>
